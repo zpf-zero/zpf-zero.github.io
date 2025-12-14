@@ -57,8 +57,8 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_b553d40ce3f15470.png" width="300"
-                            height="169" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="/img/dongman_hu_74b065e7a1988bf4.png" width="300"
+                            height="299" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
                 </a>
@@ -255,8 +255,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/test/" style="background-color: #2a9d8f; color: #fff;">
-                Test
+            <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/" >
+                个人成长
             </a>
         
     </header>
@@ -368,6 +368,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/build-security-sense-alone/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一个人在外打拼，如何建立内心的安全感</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -516,6 +529,74 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+  
 
+
+    
+    
+    const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+    
+    const cssPath = "/waifu/waifu.css"
+    const waifuTipesJsonPath = "/waifu/waifu-tips.json"
+
+    
+    
+    function loadExternalResource(url, type) {
+      return new Promise((resolve, reject) => {
+        let tag;
+
+        if (type === 'css') {
+          tag = document.createElement('link');
+          tag.rel = 'stylesheet';
+          tag.href = url;
+        }
+        else if (type === 'js') {
+          tag = document.createElement('script');
+          tag.type = 'module';
+          tag.src = url;
+        }
+        if (tag) {
+          tag.onload = () => resolve(url);
+          tag.onerror = () => reject(url);
+          document.head.appendChild(tag);
+        }
+      });
+    }
+
+    (async () => {
+      
+      
+      
+
+      
+      
+      const OriginalImage = window.Image;
+      window.Image = function (...args) {
+        const img = new OriginalImage(...args);
+        img.crossOrigin = "anonymous";
+        return img;
+      };
+      window.Image.prototype = OriginalImage.prototype;
+      
+      
+      await Promise.all([
+        loadExternalResource(cssPath, 'css'),
+        loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+      ]);
+      
+      
+      initWidget({
+        waifuPath: live2d_path + 'waifu-tips.json',
+        
+        cubism2Path: live2d_path + 'live2d.min.js',
+        cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+        tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+        logLevel: 'warn',
+        drag: false,
+      });
+    })();
+
+</script>
     </body>
 </html>

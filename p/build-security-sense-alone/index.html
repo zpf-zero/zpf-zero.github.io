@@ -56,8 +56,8 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_b553d40ce3f15470.png" width="300"
-                            height="169" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="/img/dongman_hu_74b065e7a1988bf4.png" width="300"
+                            height="299" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
                 </a>
@@ -529,6 +529,63 @@
 
     
 
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/test-chinese/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.46f61e8ea6a2df8fc5bf1d24a17c44a6_hu_57b7cab9514860c.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Chinese"
+                        data-key="test-chinese" 
+                        data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Chinese</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/emoji-support/">
+        
+        
+            <div class="article-image">
+                <img src="/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.60116b1ccfc8632e9a65f7d51df3efc2_hu_c1cfd6b8275d624a.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Emoji Support"
+                        
+                        data-hash="md5-YBFrHM/IYy6aZffVHfPvwg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Emoji Support</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
      
     
         
@@ -648,6 +705,74 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+  
 
+
+    
+    
+    const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+    
+    const cssPath = "/waifu/waifu.css"
+    const waifuTipesJsonPath = "/waifu/waifu-tips.json"
+
+    
+    
+    function loadExternalResource(url, type) {
+      return new Promise((resolve, reject) => {
+        let tag;
+
+        if (type === 'css') {
+          tag = document.createElement('link');
+          tag.rel = 'stylesheet';
+          tag.href = url;
+        }
+        else if (type === 'js') {
+          tag = document.createElement('script');
+          tag.type = 'module';
+          tag.src = url;
+        }
+        if (tag) {
+          tag.onload = () => resolve(url);
+          tag.onerror = () => reject(url);
+          document.head.appendChild(tag);
+        }
+      });
+    }
+
+    (async () => {
+      
+      
+      
+
+      
+      
+      const OriginalImage = window.Image;
+      window.Image = function (...args) {
+        const img = new OriginalImage(...args);
+        img.crossOrigin = "anonymous";
+        return img;
+      };
+      window.Image.prototype = OriginalImage.prototype;
+      
+      
+      await Promise.all([
+        loadExternalResource(cssPath, 'css'),
+        loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+      ]);
+      
+      
+      initWidget({
+        waifuPath: live2d_path + 'waifu-tips.json',
+        
+        cubism2Path: live2d_path + 'live2d.min.js',
+        cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+        tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+        logLevel: 'warn',
+        drag: false,
+      });
+    })();
+
+</script>
     </body>
 </html>

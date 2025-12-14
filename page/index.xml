@@ -64,35 +64,41 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;h2 id=&#34;-你好我是-zpf&#34;&gt;👋 你好，我是 ZPF
-&lt;/h2&gt;&lt;p&gt;一名即将于 &lt;strong&gt;2025 年 6 月&lt;/strong&gt; 毕业的计算机专业学生，热爱技术，乐于分享。&lt;/p&gt;
-&lt;p&gt;这里是我的个人博客，记录学习笔记、技术心得和生活感悟。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-你好我是张鹏飞&#34;&gt;👋 你好，我是张鹏飞
+&lt;/h2&gt;&lt;p&gt;没错，张鹏飞 —— 一个和&amp;quot;张伟&amp;quot;一样普通的名字。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;02 年生人&lt;/strong&gt;，标准 00 后，误入程序员这行，热爱技术，也乐于分享。技术谈不上多厉害，但人嘛，来都来了，总得好好享受这趟旅程不是？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;人生是旷野，不是轨道。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你正为某件事焦虑，不妨放轻松——毕竟人生只有一次，所有人最终都会抵达同一个终点。与其内耗，不如享受当下。&lt;/p&gt;
+&lt;p&gt;🎵 来，一起听首周杰伦的&lt;a class=&#34;link&#34; href=&#34;https://music.163.com/#/song?id=185709&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;《稻香》&lt;/a&gt;，笑一个吧~&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-技术栈&#34;&gt;🛠️ 技术栈
 &lt;/h2&gt;&lt;h3 id=&#34;后端开发&#34;&gt;后端开发
 &lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;语言&lt;/th&gt;
-          &lt;th&gt;熟练度&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;语言&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;掌握程度&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;Golang&lt;/td&gt;
-          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Golang&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;Python&lt;/td&gt;
-          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Python&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐⭐&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;Java&lt;/td&gt;
-          &lt;td&gt;⭐⭐⭐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Java&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐⭐&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;JavaScript/Node.js&lt;/td&gt;
-          &lt;td&gt;⭐⭐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;JavaScript&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;⭐⭐&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -102,32 +108,46 @@
 &lt;li&gt;&lt;strong&gt;构建工具&lt;/strong&gt;：Vite、Webpack&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;UI 组件库&lt;/strong&gt;：Element UI、Ant Design Vue&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;运维--中间件&#34;&gt;运维 &amp;amp; 中间件
+&lt;h3 id=&#34;运维--devops&#34;&gt;运维 &amp;amp; DevOps
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;操作系统&lt;/strong&gt;：Linux（CentOS、Ubuntu）常用命令与服务管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;：MySQL、Redis 等部署与优化&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;容器化&lt;/strong&gt;：Docker 容器构建与管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;编排工具&lt;/strong&gt;：Kubernetes（K8s）常用命令与资源管理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;其他&lt;/strong&gt;：Nginx、消息队列等中间件的部署与配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统运维&lt;/strong&gt;：Linux（CentOS / Ubuntu）日常管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据存储&lt;/strong&gt;：MySQL、Redis 部署调优&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;容器技术&lt;/strong&gt;：Docker 镜像构建与容器编排&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;云原生&lt;/strong&gt;：Kubernetes 集群管理与应用部署&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web 服务&lt;/strong&gt;：Nginx、消息队列等中间件配置&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-关于本站&#34;&gt;📚 关于本站
-&lt;/h2&gt;&lt;p&gt;本博客使用 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Hugo&lt;/a&gt; 静态网站生成器结合GitHub Page搭建，主题为 &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Stack&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;主要内容包括：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;本博客基于 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo&lt;/a&gt; + &lt;a class=&#34;link&#34; href=&#34;https://pages.github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Pages&lt;/a&gt; 搭建。&lt;/p&gt;
+&lt;p&gt;在这里你会看到：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;💡 技术学习笔记&lt;/li&gt;
-&lt;li&gt;🔧 项目实践总结&lt;/li&gt;
-&lt;li&gt;🌱 个人成长记录&lt;/li&gt;
+&lt;li&gt;💡 &lt;strong&gt;技术笔记&lt;/strong&gt; — 学习路上的点滴积累&lt;/li&gt;
+&lt;li&gt;🔧 &lt;strong&gt;实践总结&lt;/strong&gt; — 踩过的坑与填坑指南&lt;/li&gt;
+&lt;li&gt;🌱 &lt;strong&gt;生活随笔&lt;/strong&gt; — 偶尔也聊聊技术之外的事&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;-联系我&#34;&gt;📫 联系我
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;weichat&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;zpf_zero0000&#34; &gt;微信号&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;qq&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;1067779329&#34; &gt;企鹅&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;欢迎交流，共同进步！&lt;/p&gt;
+&lt;h2 id=&#34;-找到我&#34;&gt;📫 找到我
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;平台&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;联系方式&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;微信&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;zpf_zero0000&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;QQ&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;1067779329&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;有问题欢迎交流，一起进步 🚀&lt;/p&gt;
 </description>
         </item>
         
