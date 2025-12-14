@@ -2,65 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on ZPF的博客</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://zpf-zero.github.io/categories/</link>
         <description>Recent content in Categories on ZPF的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 13 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 13 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zpf-zero.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>个人成长</title>
-        <link>http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</link>
+        <link>https://zpf-zero.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</link>
         <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</guid>
+        <guid>https://zpf-zero.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>技术成长</title>
+        <link>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</link>
+        <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</guid>
         <description></description>
         </item>
         <item>
         <title>生活感悟</title>
-        <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</link>
+        <link>https://zpf-zero.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</link>
         <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</guid>
+        <guid>https://zpf-zero.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>职业发展</title>
+        <link>https://zpf-zero.github.io/categories/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/</link>
+        <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zpf-zero.github.io/categories/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/</guid>
         <description></description>
         </item>
         <item>
         <title>Test</title>
-        <link>http://localhost:1313/categories/test/</link>
+        <link>https://zpf-zero.github.io/categories/test/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/test/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>https://zpf-zero.github.io/categories/test/</guid>
+        <description>&lt;img src="https://zpf-zero.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         <item>
         <title>测试</title>
-        <link>http://localhost:1313/categories/%E6%B5%8B%E8%AF%95/</link>
+        <link>https://zpf-zero.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E6%B5%8B%E8%AF%95/</guid>
+        <guid>https://zpf-zero.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
         <description></description>
         </item>
         <item>
         <title>Syntax</title>
-        <link>http://localhost:1313/categories/syntax/</link>
+        <link>https://zpf-zero.github.io/categories/syntax/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/syntax/</guid>
+        <guid>https://zpf-zero.github.io/categories/syntax/</guid>
         <description></description>
         </item>
         <item>
         <title>Themes</title>
-        <link>http://localhost:1313/categories/themes/</link>
+        <link>https://zpf-zero.github.io/categories/themes/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/themes/</guid>
+        <guid>https://zpf-zero.github.io/categories/themes/</guid>
         <description></description>
         </item>
         <item>
         <title>Test With Whitespaces</title>
-        <link>http://localhost:1313/categories/test-with-whitespaces/</link>
+        <link>https://zpf-zero.github.io/categories/test-with-whitespaces/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/test-with-whitespaces/</guid>
+        <guid>https://zpf-zero.github.io/categories/test-with-whitespaces/</guid>
         <description></description>
         </item>
         
