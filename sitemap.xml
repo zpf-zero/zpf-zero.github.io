@@ -3,9 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zpf-zero.github.io/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/categories/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/categories/k8s/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/p/kubernetes-command-guide/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/post/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/categories/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/categories/docker/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/p/docker-complete-guide/</loc>
@@ -14,19 +32,10 @@
     <loc>https://zpf-zero.github.io/categories/leetcode/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zpf-zero.github.io/post/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zpf-zero.github.io/p/binary-search-guide/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zpf-zero.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zpf-zero.github.io/categories/%E8%BF%90%E7%BB%B4/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/p/programmer-self-cultivation/</loc>
