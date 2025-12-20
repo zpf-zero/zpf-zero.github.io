@@ -425,7 +425,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// router/index.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">RouteRecordRaw</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
@@ -462,7 +462,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// main.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">router</span> <span class="kr">from</span> <span class="s1">&#39;./router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -548,39 +548,39 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 动态段
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/User.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 多个动态段
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/users/:userId/posts/:postId&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;UserPost&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/UserPost.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 可选参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/users/:id?&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Users.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 正则约束
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/users/:id(\\d+)&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/User.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 可重复参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/files/:path+&#39;</span><span class="p">,</span>  <span class="c1">// 至少一个
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Files.vue&#39;</span><span class="p">),</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Files.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/files/:path*&#39;</span><span class="p">,</span>  <span class="c1">// 零个或多个
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Files.vue&#39;</span><span class="p">),</span>
+</span></span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Files.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="p">]</span>
 </span></span></code></pre></td></tr></table>
@@ -607,7 +607,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 访问参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">userId</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">postId</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -649,7 +649,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">children</span><span class="o">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">      <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// 默认子路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">        <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;UserProfile&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/UserProfile.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">      <span class="p">},</span>
@@ -781,7 +781,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">routes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 重定向
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/home&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">redirect</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
@@ -794,7 +794,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 别名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/users&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">alias</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;/people&#39;</span><span class="p">,</span> <span class="s1">&#39;/members&#39;</span><span class="p">],</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/Users.vue&#39;</span><span class="p">),</span>
@@ -847,27 +847,27 @@
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 导航到指定路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">goToHome</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goToHome</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 命名路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">goToUser</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goToUser</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 带查询参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">goToSearch</span> <span class="o">=</span> <span class="p">(</span><span class="nx">query</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goToSearch</span> <span class="o">=</span> <span class="p">(</span><span class="nx">query</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">q</span><span class="o">:</span> <span class="nx">query</span> <span class="p">}</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 替换当前路由（不添加历史记录）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">replaceToHome</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">replaceToHome</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">router</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 前进/后退
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">goBack</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">back</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goBack</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">back</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goForward</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">forward</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">goTo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -892,7 +892,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// push 返回 Promise
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Navigation successful&#39;</span><span class="p">)</span>
@@ -954,43 +954,43 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// router/index.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useAuthStore</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@/stores/auth&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createRouter</span><span class="p">({</span> <span class="p">...</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 全局前置守卫
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">authStore</span> <span class="o">=</span> <span class="nx">useAuthStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 检查路由是否需要认证
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">requiresAuth</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">authStore</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">requiresAuth</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">authStore</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 重定向到登录页
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/login&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">redirect</span>: <span class="kt">to.fullPath</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 检查权限
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">roles</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">roles</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">authStore</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">role</span><span class="p">))</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">roles</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">roles</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">authStore</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">role</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/403&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">true</span> <span class="c1">// 或者 undefined 继续导航
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 全局后置钩子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">afterEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">afterEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 更新页面标题
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My App&#39;</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My App&#39;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 记录页面访问
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">analytics</span><span class="p">.</span><span class="nx">logPageView</span><span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">path</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">  <span class="nx">analytics</span><span class="p">.</span><span class="nx">logPageView</span><span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">path</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 全局错误处理
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">onError</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">onError</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Navigation error:&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
@@ -1054,7 +1054,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">onBeforeRouteLeave</span><span class="p">,</span> <span class="nx">onBeforeRouteUpdate</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 离开守卫
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onBeforeRouteLeave</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onBeforeRouteLeave</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">hasUnsavedChanges</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">&#39;有未保存的更改，确定离开吗？&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">answer</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span>
@@ -1062,9 +1062,9 @@
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 更新守卫（参数变化时）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onBeforeRouteUpdate</span><span class="p">(</span><span class="nx">async</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onBeforeRouteUpdate</span><span class="p">(</span><span class="nx">async</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 路由参数变化时重新获取数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">from</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">from</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="nx">as</span> <span class="nx">string</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
@@ -1102,7 +1102,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 类型声明
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">declare</span> <span class="nx">module</span> <span class="s1">&#39;vue-router&#39;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">declare</span> <span class="nx">module</span> <span class="s1">&#39;vue-router&#39;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">interface</span> <span class="nx">RouteMeta</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">title?</span>: <span class="kt">string</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">requiresAuth?</span>: <span class="kt">boolean</span>
@@ -1285,12 +1285,12 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">routes</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">scrollBehavior</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">,</span> <span class="nx">savedPosition</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 如果有保存的位置（浏览器前进/后退）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">savedPosition</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">savedPosition</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">savedPosition</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// 如果有锚点
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">el</span>: <span class="kt">to.hash</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">behavior</span><span class="o">:</span> <span class="s1">&#39;smooth&#39;</span><span class="p">,</span>
@@ -1298,12 +1298,12 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// 滚动到顶部
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span> <span class="nx">top</span>: <span class="kt">0</span><span class="p">,</span> <span class="nx">behavior</span><span class="o">:</span> <span class="s1">&#39;smooth&#39;</span> <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span> <span class="nx">top</span>: <span class="kt">0</span><span class="p">,</span> <span class="nx">behavior</span><span class="o">:</span> <span class="s1">&#39;smooth&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 延迟滚动
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">scrollBehavior</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">,</span> <span class="nx">savedPosition</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">scrollBehavior</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">,</span> <span class="nx">savedPosition</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">resolve</span><span class="p">({</span> <span class="nx">top</span>: <span class="kt">0</span> <span class="p">})</span>
@@ -1342,27 +1342,27 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 动态添加路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">addRoute</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">addRoute</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/new-page&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;NewPage&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/NewPage.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 添加嵌套路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">addRoute</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">addRoute</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;activity&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;UserActivity&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/UserActivity.vue&#39;</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 删除路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">removeRoute</span><span class="p">(</span><span class="s1">&#39;NewPage&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">removeRoute</span><span class="p">(</span><span class="s1">&#39;NewPage&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 检查路由是否存在
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">hasRoute</span><span class="p">(</span><span class="s1">&#39;NewPage&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">hasRoute</span><span class="p">(</span><span class="s1">&#39;NewPage&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 获取所有路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">getRoutes</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">getRoutes</span><span class="p">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="82-权限路由">8.2 权限路由
@@ -1410,12 +1410,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// stores/permission.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">usePermissionStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;permission&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">usePermissionStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;permission&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">RouteRecordRaw</span><span class="err">[]</span><span class="p">&gt;([])</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">addedRoutes</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">RouteRecordRaw</span><span class="err">[]</span><span class="p">&gt;([])</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="c1">// 根据用户角色生成路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">function</span> <span class="nx">generateRoutes</span><span class="p">(</span><span class="nx">roles</span>: <span class="kt">string</span><span class="p">[])</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">generateRoutes</span><span class="p">(</span><span class="nx">roles</span>: <span class="kt">string</span><span class="p">[])</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">asyncRoutes</span> <span class="o">=</span> <span class="nx">filterAsyncRoutes</span><span class="p">(</span><span class="nx">allAsyncRoutes</span><span class="p">,</span> <span class="nx">roles</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">addedRoutes</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">asyncRoutes</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">routes</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">constantRoutes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">asyncRoutes</span><span class="p">)</span>
@@ -1426,7 +1426,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 过滤路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">filterAsyncRoutes</span><span class="p">(</span><span class="nx">routes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[],</span> <span class="nx">roles</span>: <span class="kt">string</span><span class="p">[])</span><span class="o">:</span> <span class="nx">RouteRecordRaw</span><span class="p">[]</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">filterAsyncRoutes</span><span class="p">(</span><span class="nx">routes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[],</span> <span class="nx">roles</span>: <span class="kt">string</span><span class="p">[])</span><span class="o">:</span> <span class="nx">RouteRecordRaw</span><span class="p">[]</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">res</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="nx">routes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">route</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1478,25 +1478,25 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 在守卫中动态添加路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">(</span><span class="kr">async</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">(</span><span class="kr">async</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">authStore</span> <span class="o">=</span> <span class="nx">useAuthStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">permissionStore</span> <span class="o">=</span> <span class="nx">usePermissionStore</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">authStore</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">permissionStore</span><span class="p">.</span><span class="nx">addedRoutes</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// 获取用户信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">authStore</span><span class="p">.</span><span class="nx">getUserInfo</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">authStore</span><span class="p">.</span><span class="nx">getUserInfo</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">      
 </span></span><span class="line"><span class="cl">      <span class="c1">// 生成路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">const</span> <span class="nx">asyncRoutes</span> <span class="o">=</span> <span class="nx">permissionStore</span><span class="p">.</span><span class="nx">generateRoutes</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">asyncRoutes</span> <span class="o">=</span> <span class="nx">permissionStore</span><span class="p">.</span><span class="nx">generateRoutes</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      
 </span></span><span class="line"><span class="cl">      <span class="c1">// 动态添加路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">asyncRoutes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">route</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">      <span class="nx">asyncRoutes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">route</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">router</span><span class="p">.</span><span class="nx">addRoute</span><span class="p">(</span><span class="nx">route</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="p">})</span>
 </span></span><span class="line"><span class="cl">      
 </span></span><span class="line"><span class="cl">      <span class="c1">// 重新导航
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">to</span><span class="p">,</span> <span class="nx">replace</span>: <span class="kt">true</span> <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">to</span><span class="p">,</span> <span class="nx">replace</span>: <span class="kt">true</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
@@ -1675,13 +1675,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// router/index.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span><span class="p">,</span> <span class="nx">RouteRecordRaw</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRouter</span><span class="p">,</span> <span class="nx">createWebHistory</span><span class="p">,</span> <span class="nx">RouteRecordRaw</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue-router&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useAuthStore</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@/stores/auth&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">NProgress</span> <span class="kr">from</span> <span class="s1">&#39;nprogress&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;nprogress/nprogress.css&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 公共路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">constantRoutes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">constantRoutes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/login&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Login&#39;</span><span class="p">,</span>
@@ -1697,7 +1697,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 需要权限的路由
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">asyncRoutes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">asyncRoutes</span>: <span class="kt">RouteRecordRaw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/layouts/Default.vue&#39;</span><span class="p">),</span>
@@ -1726,7 +1726,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 白名单
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">whiteList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="s1">&#39;/404&#39;</span><span class="p">]</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">whiteList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="s1">&#39;/404&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">(</span><span class="kr">async</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="kr">from</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">NProgress</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>

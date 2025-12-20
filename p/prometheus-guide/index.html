@@ -406,8 +406,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># docker-compose.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">prometheus</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">prom/prometheus:latest</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
@@ -420,7 +420,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;--storage.tsdb.path=/prometheus&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;--web.enable-lifecycle&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">volumes</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">prometheus_data</span><span class="p">:</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -457,20 +457,20 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># prometheus.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">global</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">global</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l">15s</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">evaluation_interval</span><span class="p">:</span><span class="w"> </span><span class="l">15s</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">alerting</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">alerting</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">alertmanagers</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">static_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">targets</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">alertmanager:9093</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">rule_files</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">rule_files</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;alerts/*.yml&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;prometheus&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;localhost:9090&#39;</span><span class="p">]</span><span class="w">
@@ -512,20 +512,20 @@
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus/promauto&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 定义 Counter</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="nx">httpRequestsTotal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewCounterVec</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 定义 Counter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="nx">httpRequestsTotal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewCounterVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">CounterOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;http_requests_total&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Help</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;Total number of HTTP requests&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;method&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;path&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;status&#34;</span><span class="p">},</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">).</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;201&#34;</span><span class="p">).</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">).</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;201&#34;</span><span class="p">).</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="22-gauge仪表盘">2.2 Gauge（仪表盘）
@@ -558,29 +558,29 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 定义 Gauge</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="nx">activeConnections</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewGauge</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="nx">activeConnections</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewGauge</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">GaugeOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;active_connections&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Help</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;Number of active connections&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">},</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="nx">memoryUsage</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewGaugeVec</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="nx">memoryUsage</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewGaugeVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">GaugeOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;memory_usage_bytes&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Help</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;Memory usage in bytes&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;type&#34;</span><span class="p">},</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Dec</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Sub</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Dec</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">activeConnections</span><span class="p">.</span><span class="nf">Sub</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">memoryUsage</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;heap&#34;</span><span class="p">).</span><span class="nf">Set</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">memoryUsage</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;heap&#34;</span><span class="p">).</span><span class="nf">Set</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="23-histogram直方图">2.3 Histogram（直方图）
@@ -608,24 +608,24 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 定义 Histogram</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="nx">httpRequestDuration</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewHistogramVec</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="nx">httpRequestDuration</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewHistogramVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">HistogramOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w">    </span><span class="s">&#34;http_request_duration_seconds&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Help</span><span class="p">:</span><span class="w">    </span><span class="s">&#34;HTTP request duration in seconds&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Buckets</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">float64</span><span class="p">{</span><span class="mf">0.001</span><span class="p">,</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;method&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;path&#34;</span><span class="p">},</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">start</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 处理请求</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">duration</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nf">Since</span><span class="p">(</span><span class="nx">start</span><span class="p">).</span><span class="nf">Seconds</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">httpRequestDuration</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="nx">duration</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">start</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 处理请求</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">duration</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nf">Since</span><span class="p">(</span><span class="nx">start</span><span class="p">).</span><span class="nf">Seconds</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">httpRequestDuration</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="nx">duration</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用 Timer</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">timer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">prometheus</span><span class="p">.</span><span class="nf">NewTimer</span><span class="p">(</span><span class="nx">httpRequestDuration</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">defer</span><span class="w"> </span><span class="nx">timer</span><span class="p">.</span><span class="nf">ObserveDuration</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用 Timer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">timer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">prometheus</span><span class="p">.</span><span class="nf">NewTimer</span><span class="p">(</span><span class="nx">httpRequestDuration</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">defer</span><span class="w"> </span><span class="nx">timer</span><span class="p">.</span><span class="nf">ObserveDuration</span><span class="p">()</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="24-summary摘要">2.4 Summary（摘要）
@@ -650,7 +650,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 定义 Summary</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="nx">requestLatency</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewSummaryVec</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="nx">requestLatency</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewSummaryVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">SummaryOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;request_latency_seconds&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">Help</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;Request latency in seconds&#34;</span><span class="p">,</span><span class="w">
@@ -661,10 +661,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;handler&#34;</span><span class="p">},</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">requestLatency</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GetUser&#34;</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="mf">0.042</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">requestLatency</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GetUser&#34;</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="mf">0.042</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -741,7 +741,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">middleware</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;strconv&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;time&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
@@ -749,9 +749,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus/promauto&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus/promhttp&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">httpRequestsTotal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewCounterVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">CounterOpts</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;http_requests_total&#34;</span><span class="p">,</span><span class="w">
@@ -775,9 +775,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nx">Help</span><span class="p">:</span><span class="w"> </span><span class="s">&#34;Number of HTTP requests currently being processed&#34;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">func</span><span class="w"> </span><span class="nf">PrometheusMiddleware</span><span class="p">()</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">PrometheusMiddleware</span><span class="p">()</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">path</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nf">FullPath</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -796,14 +796,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Method</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="p">).</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">httpRequestDuration</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Method</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="nx">duration</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">func</span><span class="w"> </span><span class="nf">MetricsHandler</span><span class="p">()</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">MetricsHandler</span><span class="p">()</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">h</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">promhttp</span><span class="p">.</span><span class="nf">Handler</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">h</span><span class="p">.</span><span class="nf">ServeHTTP</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="32-自定义业务指标">3.2 自定义业务指标
@@ -872,12 +872,12 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">metrics</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;github.com/prometheus/client_golang/prometheus/promauto&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 订单指标</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">OrdersCreated</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">promauto</span><span class="p">.</span><span class="nf">NewCounterVec</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">prometheus</span><span class="p">.</span><span class="nx">CounterOpts</span><span class="p">{</span><span class="w">
@@ -920,15 +920,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;cache_name&#34;</span><span class="p">},</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 业务使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">func</span><span class="w"> </span><span class="nf">CreateOrder</span><span class="p">(</span><span class="nx">productType</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 业务使用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">CreateOrder</span><span class="p">(</span><span class="nx">productType</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 业务逻辑...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">OrdersCreated</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="nx">productType</span><span class="p">).</span><span class="nf">Inc</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">OrderAmount</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="nx">productType</span><span class="p">).</span><span class="nf">Observe</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -952,18 +952,18 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-promql" data-lang="promql"><span class="line"><span class="cl"><span class="c1"># 即时查询</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 带标签过滤</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">method</span><span class="o">=</span><span class="p">&#34;</span><span class="s">GET</span><span class="p">&#34;}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">method</span><span class="o">=~</span><span class="p">&#34;</span><span class="s">GET|POST</span><span class="p">&#34;}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">path</span><span class="o">!=</span><span class="p">&#34;</span><span class="s">/health</span><span class="p">&#34;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 带标签过滤</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">method</span><span class="o">=</span><span class="p">&#34;</span><span class="s">GET</span><span class="p">&#34;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">method</span><span class="o">=~</span><span class="p">&#34;</span><span class="s">GET|POST</span><span class="p">&#34;}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">path</span><span class="o">!=</span><span class="p">&#34;</span><span class="s">/health</span><span class="p">&#34;}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 范围查询（过去5分钟）</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 范围查询（过去5分钟）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 偏移量</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nv">http_requests_total</span><span class="w"> </span><span class="k">offset</span><span class="w"> </span><span class="s">1h</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 偏移量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nv">http_requests_total</span><span class="w"> </span><span class="k">offset</span><span class="w"> </span><span class="s">1h</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="42-聚合操作">4.2 聚合操作
@@ -993,26 +993,26 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-promql" data-lang="promql"><span class="line"><span class="cl"><span class="c1"># 求和</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">method</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="o">(</span><span class="nv">instance</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">method</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="o">(</span><span class="nv">instance</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 计数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">count</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 计数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">count</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 平均值</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">avg</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 平均值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">avg</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 最大/最小值</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">max</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">min</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 最大/最小值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">max</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">min</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 标准差</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">stddev</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 标准差</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">stddev</span><span class="o">(</span><span class="nv">http_request_duration_seconds</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Top N</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">topk</span><span class="o">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">bottomk</span><span class="o">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># Top N</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">topk</span><span class="o">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">bottomk</span><span class="o">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="43-常用函数">4.3 常用函数
@@ -1043,27 +1043,27 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-promql" data-lang="promql"><span class="line"><span class="cl"><span class="c1"># 速率（每秒请求数）</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">irate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">irate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 增长量</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">increase</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">delta</span><span class="o">(</span><span class="nv">temperature</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 增长量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">increase</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">delta</span><span class="o">(</span><span class="nv">temperature</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 直方图分位数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.95</span><span class="p">,</span><span class="w"> </span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.99</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 直方图分位数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.95</span><span class="p">,</span><span class="w"> </span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.99</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 时间函数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">time</span><span class="o">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">timestamp</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 时间函数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">time</span><span class="o">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">timestamp</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 预测</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">predict_linear</span><span class="o">(</span><span class="nv">node_filesystem_free_bytes</span><span class="p">[</span><span class="s">1h</span><span class="p">],</span><span class="w"> </span><span class="mi">4</span><span class="o">*</span><span class="mi">3600</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 预测</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">predict_linear</span><span class="o">(</span><span class="nv">node_filesystem_free_bytes</span><span class="p">[</span><span class="s">1h</span><span class="p">],</span><span class="w"> </span><span class="mi">4</span><span class="o">*</span><span class="mi">3600</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 排序</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">sort</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">sort_desc</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 排序</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">sort</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">sort_desc</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="o">)</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="44-实用查询示例">4.4 实用查询示例
@@ -1094,27 +1094,27 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-promql" data-lang="promql"><span class="line"><span class="cl"><span class="c1"># QPS（每秒请求数）</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 错误率</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">status</span><span class="o">=~</span><span class="p">&#34;</span><span class="s">5..</span><span class="p">&#34;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">/</span><span class="w"> </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 错误率</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">status</span><span class="o">=~</span><span class="p">&#34;</span><span class="s">5..</span><span class="p">&#34;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="o">/</span><span class="w"> </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 平均响应时间</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_sum</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">/</span><span class="w"> </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_count</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 平均响应时间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_sum</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="o">/</span><span class="w"> </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_count</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># P99 响应时间</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.99</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># P99 响应时间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.99</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># CPU 使用率</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">100</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">(</span><span class="k">avg</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">instance</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">node_cpu_seconds_total</span><span class="p">{</span><span class="nl">mode</span><span class="o">=</span><span class="p">&#34;</span><span class="s">idle</span><span class="p">&#34;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># CPU 使用率</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="mi">100</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">(</span><span class="k">avg</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">instance</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">node_cpu_seconds_total</span><span class="p">{</span><span class="nl">mode</span><span class="o">=</span><span class="p">&#34;</span><span class="s">idle</span><span class="p">&#34;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="o">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 内存使用率</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">node_memory_MemAvailable_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">node_memory_MemTotal_bytes</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 内存使用率</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">node_memory_MemAvailable_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">node_memory_MemTotal_bytes</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 磁盘使用率</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">node_filesystem_avail_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">node_filesystem_size_bytes</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用率</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">node_filesystem_avail_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">node_filesystem_size_bytes</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -1157,7 +1157,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># alerts/app.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">groups</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">groups</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">app</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rules</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l">HighErrorRate</span><span class="w">
@@ -1230,11 +1230,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># alertmanager.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">global</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">global</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">smtp_smarthost</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;smtp.example.com:587&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">smtp_from</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;alertmanager@example.com&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">route</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">route</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">group_by</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;alertname&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;severity&#39;</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">group_wait</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">group_interval</span><span class="p">:</span><span class="w"> </span><span class="l">5m</span><span class="w">
@@ -1248,7 +1248,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l">warning</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">receivers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">receivers</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;default&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">email_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;team@example.com&#39;</span><span class="w">
@@ -1291,7 +1291,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># prometheus.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;kubernetes-pods&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">kubernetes_sd_configs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l">pod</span><span class="w">
@@ -1352,14 +1352,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 好的命名</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">http_requests_total</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">http_request_duration_seconds</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">node_memory_usage_bytes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">http_requests_total</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">http_request_duration_seconds</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">node_memory_usage_bytes</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 避免的命名</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">requests</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">duration</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">memory</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 避免的命名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">requests</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">duration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">memory</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="72-标签使用">7.2 标签使用
@@ -1373,10 +1373,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 好的标签使用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 避免高基数标签</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users/123&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 用户ID不应作为标签</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 避免高基数标签</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">httpRequestsTotal</span><span class="p">.</span><span class="nf">WithLabelValues</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/api/users/123&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;200&#34;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 用户ID不应作为标签</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>

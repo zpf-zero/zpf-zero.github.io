@@ -501,27 +501,27 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">reactive</span><span class="p">,</span> <span class="nx">computed</span><span class="p">,</span> <span class="nx">watch</span><span class="p">,</span> <span class="nx">onMounted</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 响应式数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">age</span><span class="o">:</span> <span class="mi">25</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 计算属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 侦听器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`count changed from </span><span class="si">${</span><span class="nx">oldVal</span><span class="si">}</span><span class="sb"> to </span><span class="si">${</span><span class="nx">newVal</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 生命周期
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onMounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onMounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Component mounted&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -574,14 +574,14 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">reactive</span><span class="p">,</span> <span class="nx">toRefs</span><span class="p">,</span> <span class="nx">toRef</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// ref：适用于基本类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 访问和修改需要 .value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// reactive：适用于对象
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">count</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">user</span><span class="o">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
@@ -590,14 +590,14 @@
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 直接访问和修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span>
 </span></span><span class="line"><span class="cl"><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 解构会丢失响应性，使用 toRefs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="nx">refCount</span><span class="p">,</span> <span class="nx">user</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">toRefs</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="nx">refCount</span><span class="p">,</span> <span class="nx">user</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">toRefs</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 单个属性转 ref
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">nameRef</span> <span class="o">=</span> <span class="nx">toRef</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">nameRef</span> <span class="o">=</span> <span class="nx">toRef</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -635,10 +635,10 @@
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 只读计算属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="sb">`</span><span class="si">${</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="sb">`</span><span class="si">${</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 可写计算属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">fullNameWritable</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">({</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fullNameWritable</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">get</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="sb">`</span><span class="si">${</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">set</span><span class="o">:</span> <span class="p">(</span><span class="nx">val</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">last</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
@@ -648,7 +648,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fullNameWritable</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;Jane Smith&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">fullNameWritable</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;Jane Smith&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -709,12 +709,12 @@
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">25</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 侦听 ref
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`count: </span><span class="si">${</span><span class="nx">oldVal</span><span class="si">}</span><span class="sb"> -&gt; </span><span class="si">${</span><span class="nx">newVal</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 侦听 reactive 对象的属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`name: </span><span class="si">${</span><span class="nx">oldVal</span><span class="si">}</span><span class="sb"> -&gt; </span><span class="si">${</span><span class="nx">newVal</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
@@ -722,13 +722,13 @@
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 侦听多个源
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">([</span><span class="nx">count</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">],</span> <span class="p">([</span><span class="nx">newCount</span><span class="p">,</span> <span class="nx">newName</span><span class="p">],</span> <span class="p">[</span><span class="nx">oldCount</span><span class="p">,</span> <span class="nx">oldName</span><span class="p">])</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">([</span><span class="nx">count</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">],</span> <span class="p">([</span><span class="nx">newCount</span><span class="p">,</span> <span class="nx">newName</span><span class="p">],</span> <span class="p">[</span><span class="nx">oldCount</span><span class="p">,</span> <span class="nx">oldName</span><span class="p">])</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`count: </span><span class="si">${</span><span class="nx">oldCount</span><span class="si">}</span><span class="sb"> -&gt; </span><span class="si">${</span><span class="nx">newCount</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`name: </span><span class="si">${</span><span class="nx">oldName</span><span class="si">}</span><span class="sb"> -&gt; </span><span class="si">${</span><span class="nx">newName</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 深度侦听
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">user</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;user changed&#39;</span><span class="p">,</span> <span class="nx">newVal</span><span class="p">)</span>
@@ -737,12 +737,12 @@
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 立即执行
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watch</span><span class="p">(</span><span class="nx">count</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newVal</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">{</span> <span class="nx">immediate</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// watchEffect：自动收集依赖
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">watchEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Count is </span><span class="si">${</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User is </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
@@ -817,42 +817,42 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载前
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onBeforeMount</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onBeforeMount</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before mount&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 挂载后
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onMounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onMounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Mounted&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 可以访问 DOM
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 更新前
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onBeforeUpdate</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onBeforeUpdate</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before update&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 更新后
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onUpdated</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onUpdated</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Updated&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 卸载前
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onBeforeUnmount</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onBeforeUnmount</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before unmount&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 清理定时器、事件监听等
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 卸载后
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onUnmounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onUnmounted</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Unmounted&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 错误捕获
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">onErrorCaptured</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">instance</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">onErrorCaptured</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">instance</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error captured:&#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">false</span> <span class="c1">// 阻止错误继续传播
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -932,10 +932,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义 props
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="nx">defineProps</span><span class="p">&lt;</span><span class="nt">Props</span><span class="p">&gt;()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="nx">defineProps</span><span class="p">&lt;</span><span class="nt">Props</span><span class="p">&gt;()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 带默认值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">propsWithDefaults</span> <span class="o">=</span> <span class="nx">withDefaults</span><span class="p">(</span><span class="nx">defineProps</span><span class="p">&lt;</span><span class="nt">Props</span><span class="p">&gt;(),</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">propsWithDefaults</span> <span class="o">=</span> <span class="nx">withDefaults</span><span class="p">(</span><span class="nx">defineProps</span><span class="p">&lt;</span><span class="nt">Props</span><span class="p">&gt;(),</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">count</span><span class="o">:</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -996,7 +996,7 @@
 <pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="c">&lt;!--</span> <span class="nx">子组件</span> <span class="o">--&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 定义事件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="o">&lt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="o">&lt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="s1">&#39;submit&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nx">age</span><span class="o">:</span> <span class="nx">number</span> <span class="p">})</span><span class="o">:</span> <span class="k">void</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
@@ -1189,11 +1189,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 提供数据和方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="nx">theme</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="nx">theme</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;updateTheme&#39;</span><span class="p">,</span> <span class="nx">updateTheme</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 使用 Symbol 作为 key（推荐）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">ThemeKey</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">ThemeKey</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">provide</span><span class="p">(</span><span class="nx">ThemeKey</span><span class="p">,</span> <span class="p">{</span> <span class="nx">theme</span><span class="p">,</span> <span class="nx">updateTheme</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -1203,11 +1203,11 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">type</span> <span class="p">{</span> <span class="nx">Ref</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 注入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">&lt;</span><span class="nt">Ref</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">&lt;</span><span class="nt">Ref</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">updateTheme</span> <span class="o">=</span> <span class="nx">inject</span><span class="o">&lt;</span><span class="p">(</span><span class="nx">theme</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;updateTheme&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 带默认值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">themeWithDefault</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;light&#39;</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">themeWithDefault</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="nx">ref</span><span class="p">(</span><span class="s1">&#39;light&#39;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
@@ -1248,7 +1248,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// composables/useMouse.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">onMounted</span><span class="p">,</span> <span class="nx">onUnmounted</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">onMounted</span><span class="p">,</span> <span class="nx">onUnmounted</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useMouse() {</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1333,7 +1333,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// composables/useFetch.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watchEffect</span><span class="p">,</span> <span class="nx">toValue</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watchEffect</span><span class="p">,</span> <span class="nx">toValue</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">Ref</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useFetch</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">url</span>: <span class="kt">string</span> <span class="o">|</span> <span class="nx">Ref</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;)</span> <span class="p">{</span>
@@ -1449,7 +1449,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// composables/useDebounce.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watch</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">watch</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">Ref</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useDebounce</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">value</span>: <span class="kt">Ref</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;,</span> <span class="nx">delay</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span> <span class="p">{</span>
@@ -1468,7 +1468,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// composables/useThrottle.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useThrottle</span><span class="p">&lt;</span><span class="nt">T</span> <span class="na">extends</span> <span class="err">(</span><span class="na">...args</span><span class="err">:</span> <span class="na">any</span><span class="err">[])</span> <span class="err">=</span><span class="p">&gt;</span> <span class="kt">any</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span>: <span class="kt">T</span><span class="p">,</span> <span class="nx">delay</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useThrottle</span><span class="p">&lt;</span><span class="nt">T</span> <span class="na">extends</span> <span class="err">(</span><span class="na">...args</span><span class="err">:</span> <span class="na">any</span><span class="err">[])</span> <span class="err">=</span><span class="p">&gt;</span> <span class="kt">any</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span>: <span class="kt">T</span><span class="p">,</span> <span class="nx">delay</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">lastTime</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(...</span><span class="nx">args</span>: <span class="kt">Parameters</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1833,7 +1833,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// types/user.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">email</span>: <span class="kt">string</span>
@@ -1882,7 +1882,7 @@
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">type</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/types/user&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Props 类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">user</span><span class="o">:</span> <span class="nx">User</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">loading</span><span class="o">?:</span> <span class="kr">boolean</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1890,16 +1890,16 @@
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="nx">defineProps</span><span class="p">&lt;</span><span class="nt">Props</span><span class="p">&gt;()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Emits 类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="o">&lt;</span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">emit</span> <span class="o">=</span> <span class="nx">defineEmits</span><span class="o">&lt;</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="s1">&#39;update&#39;</span><span class="p">,</span> <span class="nx">user</span><span class="o">:</span> <span class="nx">User</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Ref 类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">HTMLInputElement</span> <span class="err">|</span> <span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">HTMLInputElement</span> <span class="err">|</span> <span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 泛型组件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;([])</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;([])</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>

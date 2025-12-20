@@ -44,6 +44,15 @@
     <loc>https://zpf-zero.github.io/p/timewheel-algorithm/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://zpf-zero.github.io/categories/mysql/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/p/mysql-guideindex/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zpf-zero.github.io/p/grafana-guide/</loc>
     <lastmod>2025-11-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -87,9 +96,6 @@
     <lastmod>2025-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/categories/olap/</loc>
-    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2025-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/p/opentelemetry-guide/</loc>
@@ -184,9 +190,6 @@
   </url><url>
     <loc>https://zpf-zero.github.io/p/gorm-guide/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zpf-zero.github.io/categories/mysql/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zpf-zero.github.io/p/mysql-guide/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>

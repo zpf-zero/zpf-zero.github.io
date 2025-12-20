@@ -64,6 +64,22 @@
         <description></description>
         </item>
         <item>
+        <title>MySQL</title>
+        <link>https://zpf-zero.github.io/categories/mysql/</link>
+        <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zpf-zero.github.io/categories/mysql/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>数据库</title>
+        <link>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+        <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>可观测性</title>
         <link>https://zpf-zero.github.io/categories/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/</link>
         <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
@@ -133,14 +149,6 @@
         <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/categories/olap/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>数据库</title>
-        <link>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-        <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zpf-zero.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
         <description></description>
         </item>
         <item>
@@ -245,14 +253,6 @@
         <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/categories/web%E6%A1%86%E6%9E%B6/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>MySQL</title>
-        <link>https://zpf-zero.github.io/categories/mysql/</link>
-        <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://zpf-zero.github.io/categories/mysql/</guid>
         <description></description>
         </item>
         <item>
