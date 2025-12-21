@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="个人总结k8s常用命令以及操作">
+<title>K8s 总结</title>
+
+<link rel='canonical' href='https://zpf-zero.github.io/p/kubernetes-command-two/'>
+
+<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="K8s 总结">
+<meta property='og:description' content="个人总结k8s常用命令以及操作">
+<meta property='og:url' content='https://zpf-zero.github.io/p/kubernetes-command-two/'>
+<meta property='og:site_name' content='ZPF的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-12-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://zpf-zero.github.io/p/kubernetes-command-two/k8s.png' />
+<meta name="twitter:title" content="K8s 总结">
+<meta name="twitter:description" content="个人总结k8s常用命令以及操作"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zpf-zero.github.io/p/kubernetes-command-two/k8s.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/dongman_hu_74b065e7a1988bf4.png" width="300"
+                            height="299" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🐶</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZPF的博客</a></h1>
+            <h2 class="site-description">一个普通人的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://b23.tv/KEFn1x8'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/zpf-zero'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://v.douyin.com/yFhpmJ0li3w/%202@4.com%20:8pm'
+                        target="_blank"
+                        title="TikTok"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#etcd-相关操作mac-环境">Etcd 相关操作（Mac 环境）</a>
+      <ol>
+        <li><a href="#查看服务状态">查看服务状态</a></li>
+        <li><a href="#启动-etcd">启动 Etcd</a></li>
+        <li><a href="#启动-etcd-webui">启动 Etcd WebUI</a></li>
+      </ol>
+    </li>
+    <li><a href="#redis-连接命令">Redis 连接命令</a></li>
+    <li><a href="#helm-核心概念">Helm 核心概念</a></li>
+    <li><a href="#前置配置">前置配置</a></li>
+    <li><a href="#kubectl-常用命令">Kubectl 常用命令</a>
+      <ol>
+        <li><a href="#1-命名空间操作">1. 命名空间操作</a></li>
+        <li><a href="#2-pod-相关操作">2. Pod 相关操作</a></li>
+        <li><a href="#3-configmap-相关操作">3. ConfigMap 相关操作</a></li>
+        <li><a href="#4-资源热重启deploystatefulset">4. 资源热重启（Deploy/StatefulSet）</a></li>
+      </ol>
+    </li>
+    <li><a href="#helm-常用命令">Helm 常用命令</a>
+      <ol>
+        <li><a href="#1-chart-仓库操作">1. Chart 仓库操作</a></li>
+        <li><a href="#2-release-管理">2. Release 管理</a></li>
+        <li><a href="#3-升级失败排查">3. 升级失败排查</a></li>
+      </ol>
+    </li>
+    <li><a href="#码云环境-helm-实战rancher-部署">码云环境 Helm 实战（Rancher 部署）</a>
+      <ol>
+        <li><a href="#1-仓库配置">1. 仓库配置</a></li>
+        <li><a href="#2-chart-包操作">2. Chart 包操作</a></li>
+        <li><a href="#3-发版流程">3. 发版流程</a></li>
+        <li><a href="#4-chart-包更新流程">4. Chart 包更新流程</a></li>
+      </ol>
+    </li>
+    <li><a href="#非-rancher-部署服务器本地部署">非 Rancher 部署（服务器本地部署）</a>
+      <ol>
+        <li><a href="#1-本地-docker-镜像处理">1. 本地 Docker 镜像处理</a></li>
+        <li><a href="#2-远程服务器部署">2. 远程服务器部署</a></li>
+      </ol>
+    </li>
+    <li><a href="#k8s-核心概念补充">K8s 核心概念补充</a>
+      <ol>
+        <li><a href="#1-命名空间namespace">1. 命名空间（Namespace）</a></li>
+        <li><a href="#2-pod">2. Pod</a></li>
+        <li><a href="#3-configmapcm">3. ConfigMap（CM）</a></li>
+        <li><a href="#4-chart-目录结构以-zpf0000-chart-为例">4. Chart 目录结构（以 zpf0000-chart 为例）</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/kubernetes-command-two/">
+                <img src="/p/kubernetes-command-two/k8s_hu_672defd747a0f041.png"
+                        srcset="/p/kubernetes-command-two/k8s_hu_672defd747a0f041.png 800w, /p/kubernetes-command-two/k8s_hu_4981b29fea80d689.png 1600w"
+                        width="800" 
+                        height="441" 
+                        loading="lazy"
+                        alt="Featured image of post K8s 总结" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/" >
+                技术成长
+            </a>
+        
+            <a href="/categories/k8s/" >
+                K8s
+            </a>
+        
+            <a href="/categories/%E8%BF%90%E7%BB%B4/" >
+                运维
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/kubernetes-command-two/">K8s 总结</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            个人总结k8s常用命令以及操作
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-20T00:00:00Z'>2025-12-20</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="etcd-相关操作mac-环境">Etcd 相关操作（Mac 环境）
+</h2><h3 id="查看服务状态">查看服务状态
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">launchctl list <span class="p">|</span> grep etcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-etcd">启动 Etcd
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 短暂启动</span>
+</span></span><span class="line"><span class="cl">etcd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 开机自启</span>
+</span></span><span class="line"><span class="cl">brew services start etcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-etcd-webui">启动 Etcd WebUI
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/etcd-browser/ 
+</span></span><span class="line"><span class="cl">node server.js
+</span></span><span class="line"><span class="cl"><span class="c1"># 访问地址：localhost:8000</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="redis-连接命令">Redis 连接命令
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-cli -h localhost -p <span class="m">6379</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="helm-核心概念">Helm 核心概念
+</h2><ol>
+<li><strong>Chart</strong>：代表 Helm 包，包含 Kubernetes 集群运行应用所需的所有资源定义，类似 Homebrew formula、Apt dpkg。</li>
+<li><strong>Repository（仓库）</strong>：用于存放和共享 Chart 的仓库，是 Kubernetes 包的分发平台。</li>
+<li><strong>Release</strong>：Chart 在 Kubernetes 集群中的运行实例。同一个 Chart 可在集群中多次安装，每次安装对应一个独立 Release。</li>
+</ol>
+<p><strong>类比理解</strong></p>
+<ul>
+<li>Docker 中 <code>Image</code> ≈ K8s 中 <code>Chart</code></li>
+<li>Docker 中 <code>Container</code> ≈ K8s 中 <code>Release</code></li>
+</ul>
+<p><strong>Helm 核心作用</strong>：将 Chart 安装到 Kubernetes 集群生成 Release，可通过仓库查找、管理 Chart。</p>
+<h2 id="前置配置">前置配置
+</h2><p>使用 <code>kubectl</code> 命令前，需配置 <code>~/.kube/config</code> 文件，完成集群信息和权限设置。</p>
+<h2 id="kubectl-常用命令">Kubectl 常用命令
+</h2><h3 id="1-命名空间操作">1. 命名空间操作
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看所有命名空间</span>
+</span></span><span class="line"><span class="cl">kubectl get ns
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-pod-相关操作">2. Pod 相关操作
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 查看指定命名空间下的 Pod（过滤关键词）</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> get pod <span class="p">|</span> grep code-go
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">kubectl -n code-dev get pod <span class="p">|</span> grep code-go
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 查看 Pod 详细描述（排查故障常用）</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> describe pod <span class="o">{</span>pod-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">kubectl -n code-dev describe pod zpf-code-go-867b7f9fbc-fmv5h
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 进入 Pod 内的容器</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> <span class="nb">exec</span> -it <span class="o">{</span>pod-name<span class="o">}</span> -c <span class="o">{</span>container-name<span class="o">}</span> -- bash
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">kubectl -n code-dev <span class="nb">exec</span> -it zpf-code-go-867b7f9fbc-fmv5h -c code-go -- bash
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出容器：按 Ctrl + D</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 查看容器内文件</span>
+</span></span><span class="line"><span class="cl">cat configs/init_settings.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 查看 Pod 日志</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 格式：kubectl -n {ns} logs [-f] {pod-name} -c {container-name} [| tail 100]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 参数说明：-f 实时跟踪日志；--tail 100 仅显示最后100行</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例1：查看最后100行日志</span>
+</span></span><span class="line"><span class="cl">kubectl -n cib logs zpf-code-go-7c5f8cc5f9-xrpm7 -c code-go <span class="p">|</span> tail -n <span class="m">100</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例2：实时查看日志</span>
+</span></span><span class="line"><span class="cl">kubectl -n cib logs -f zpf-code-go-7c5f8cc5f9-xrpm7 -c code-go
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 6. 删除 Pod（k8s 会自动重建，适用于 Pod 异常重启）</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> delete pods <span class="o">{</span>pod-name<span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-configmap-相关操作">3. ConfigMap 相关操作
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 查看指定命名空间下的 ConfigMap</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> get cm <span class="p">|</span> grep code
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">kubectl -n cib get cm <span class="p">|</span> grep code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 查看 ConfigMap 详细内容</span>
+</span></span><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> describe cm <span class="o">{</span>cm-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">kubectl -n cib describe cm code-go-init-settings-configmap
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-资源热重启deploystatefulset">4. 资源热重启（Deploy/StatefulSet）
+</h3><p>直接删除 Pod 可能导致应用短暂不可用，推荐使用 <code>rollout restart</code> 实现优雅重启：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> rollout restart <span class="o">{</span>资源类型<span class="o">}</span> <span class="o">{</span>资源名称<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例：重启 Deployment</span>
+</span></span><span class="line"><span class="cl">kubectl -n code-dev rollout restart deploy zpf-code-go
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="helm-常用命令">Helm 常用命令
+</h2><h3 id="1-chart-仓库操作">1. Chart 仓库操作
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 搜索 Hub 公共仓库中的 Chart</span>
+</span></span><span class="line"><span class="cl">helm search hub wordpress
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 添加私有仓库</span>
+</span></span><span class="line"><span class="cl">helm repo add brigade https://brigadecore.github.io/charts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 搜索本地已添加仓库中的 Chart</span>
+</span></span><span class="line"><span class="cl">helm search repo brigade
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 更新本地仓库索引（获取最新 Chart 版本）</span>
+</span></span><span class="line"><span class="cl">helm repo update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 模糊搜索仓库中的 Chart</span>
+</span></span><span class="line"><span class="cl">helm search repo nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-release-管理">2. Release 管理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 查看指定命名空间下的 Release 列表</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 查看 Release 详细状态</span>
+</span></span><span class="line"><span class="cl">helm status <span class="o">{</span>release-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 安装 Chart 生成 Release</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> install <span class="o">{</span>release-name<span class="o">}</span> <span class="o">{</span>chart-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">helm -n code-dev install nginx-zpf-test-init zpf/nginx-code-proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 更新 Release（核心操作）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 步骤1：导出当前 Release 的 values 配置文件</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> get values <span class="o">{</span>release-name<span class="o">}</span> &gt; values.yaml
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">helm -n code-dev get values zpf-code &gt; values.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 步骤2：修改 values.yaml 配置后，执行更新</span>
+</span></span><span class="line"><span class="cl">helm upgrade -n <span class="o">{</span>ns<span class="o">}</span> <span class="o">{</span>release-name<span class="o">}</span> -f ./values.yaml <span class="o">{</span>chart-name<span class="o">}</span> --version <span class="o">{</span>current-chart-version<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">helm upgrade -n code-dev zpf-code -f ./values.yaml zpf/zpf-code-gitaly-go --version 2.3.29
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式2：通过本地 Chart 压缩包更新</span>
+</span></span><span class="line"><span class="cl">helm -n nonghang upgrade zpf-code -f values.yaml ./zpf-code-gitaly-go-2.3.50.tgz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 查看 Release 更新历史（获取 revision 版本号）</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> <span class="nb">history</span> <span class="o">{</span>release-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">helm -n code-dev <span class="nb">history</span> zpf-code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 6. 版本回退</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> rollback <span class="o">{</span>release-name<span class="o">}</span> <span class="o">{</span>revision<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例：回退到第960个版本</span>
+</span></span><span class="line"><span class="cl">helm -n code-dev rollback zpf-code <span class="m">960</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 7. 卸载 Release</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> uninstall <span class="o">{</span>release-name<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">helm -n code-dev uninstall zpf-code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-升级失败排查">3. 升级失败排查
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 查看升级前置任务日志</span>
+</span></span><span class="line"><span class="cl">kubectl -n nonghang logs job/zpf-code-pre-upgrade-migrate-job 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 查看 Pod 上一次启动日志</span>
+</span></span><span class="line"><span class="cl">kubectl -n nonghang logs --previous zpf-code-go-7b6cd5d54f-fdjd2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="码云环境-helm-实战rancher-部署">码云环境 Helm 实战（Rancher 部署）
+</h2><h3 id="1-仓库配置">1. 仓库配置
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 旧版仓库（不推荐）</span>
+</span></span><span class="line"><span class="cl">helm repo add zpf https://nexus.zpf.work/repository/zpf-helm-prod
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 新版仓库（推荐，需认证）</span>
+</span></span><span class="line"><span class="cl">helm repo add zpf-helm-prod https://osc.zpf.work/repo/api/helm/zpf-helm-prod --username &lt;番茄用户名&gt; --password &lt;番茄密码&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-chart-包操作">2. Chart 包操作
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 更新仓库索引</span>
+</span></span><span class="line"><span class="cl">helm repo update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 拉取指定版本的 Chart 包到本地</span>
+</span></span><span class="line"><span class="cl">helm pull zpf-helm-prod/zpf-code-gitaly-go --version <span class="o">{</span>current_version<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 查看本地仓库列表</span>
+</span></span><span class="line"><span class="cl">helm repo list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 搜索 Chart 包最新版本</span>
+</span></span><span class="line"><span class="cl">helm search repo zpf-code-gitaly-go
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-发版流程">3. 发版流程
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 导出当前 Release 配置</span>
+</span></span><span class="line"><span class="cl">helm -n <span class="o">{</span>ns<span class="o">}</span> get values zpf-code &gt; values.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 修改 values.yaml 中 code-go 版本号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 执行发版</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 老版</span>
+</span></span><span class="line"><span class="cl">helm upgrade -n <span class="o">{</span>ns<span class="o">}</span> zpf-code -f ./values.yaml zpf/zpf-code-gitaly-go --version <span class="o">{</span>current_version<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 新版</span>
+</span></span><span class="line"><span class="cl">helm upgrade -n <span class="o">{</span>ns<span class="o">}</span> zpf-code -f ./values.yaml zpf-helm-prod/zpf-code-gitaly-go-xinchuang --version <span class="o">{</span>current_version<span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-chart-包更新流程">4. Chart 包更新流程
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 拉取 Chart 包（默认最新版，可指定版本）</span>
+</span></span><span class="line"><span class="cl">helm pull zpf-helm-prod/zpf-code-gitaly-go
+</span></span><span class="line"><span class="cl">helm pull zpf-helm-prod/zpf-code-gitaly-go --version <span class="o">{</span>current_version<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 版本号自增</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 修改配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - configmap.yaml：code-go 全局配置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - zpf-setting-configmap.yaml：外部服务、定制化配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 打包 Chart 包</span>
+</span></span><span class="line"><span class="cl">helm package ./
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 上传 Chart 包到仓库</span>
+</span></span><span class="line"><span class="cl">curl -u <span class="s2">&#34;&lt;番茄用户名&gt;:&lt;番茄密码&gt;&#34;</span> -T <span class="o">{</span>char打包的包名<span class="o">}</span> <span class="s2">&#34;https://osc.zpf.work/repo/repository/zpf-helm-prod/&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="非-rancher-部署服务器本地部署">非 Rancher 部署（服务器本地部署）
+</h2><h3 id="1-本地-docker-镜像处理">1. 本地 Docker 镜像处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 拉取镜像（区分 amd/arm 架构）</span>
+</span></span><span class="line"><span class="cl">docker pull <span class="o">{</span>镜像地址<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定架构拉取</span>
+</span></span><span class="line"><span class="cl">docker pull --platform linux/arm64 <span class="o">{</span>镜像地址<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 镜像保存为压缩包</span>
+</span></span><span class="line"><span class="cl">docker save <span class="o">{</span>镜像<span class="o">}</span> -o <span class="o">{</span>镜像压缩文件.tar<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 上传压缩包到远程服务器</span>
+</span></span><span class="line"><span class="cl">scp <span class="o">{</span>镜像压缩文件.tar<span class="o">}</span>  <span class="o">{</span>username<span class="o">}</span>@<span class="o">{</span>ip<span class="o">}</span>:<span class="o">{</span>远程路径<span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-远程服务器部署">2. 远程服务器部署
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 加载镜像压缩包</span>
+</span></span><span class="line"><span class="cl">docker load -i <span class="o">{</span>镜像压缩文件.tar<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 为镜像打标签（适配服务器私有仓库）</span>
+</span></span><span class="line"><span class="cl">docker tag <span class="o">{</span>原镜像名:tag<span class="o">}</span> <span class="o">{</span>服务器仓库地址:端口/新镜像名:tag<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例</span>
+</span></span><span class="line"><span class="cl">docker tag docker-hub.zpf.work/zpf-test/code-go:arm64v8-epic_sw-20458  10.240.10.61:5000/zpf-test/code-go:arm64v8-epic_sw-20458 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 推送镜像到服务器私有仓库</span>
+</span></span><span class="line"><span class="cl">docker push 10.240.10.61:5000/zpf-test/code-go:arm64v8-epic_sw-20458 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 导出并修改 values 配置文件</span>
+</span></span><span class="line"><span class="cl">helm -n zpf get values zpf-code &gt; values.yaml
+</span></span><span class="line"><span class="cl">helm -n zpf <span class="nb">history</span> zpf-code  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 执行发版</span>
+</span></span><span class="line"><span class="cl">helm -n zpf upgrade zpf-code <span class="o">{</span>char压缩包<span class="o">}</span> -f values.yaml  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="k8s-核心概念补充">K8s 核心概念补充
+</h2><h3 id="1-命名空间namespace">1. 命名空间（Namespace）
+</h3><ul>
+<li>简称 <code>ns</code>，用于隔离集群内资源，同一 Namespace 内资源名称唯一。</li>
+<li>常见资源：<code>Service</code>、<code>StatefulSet</code>、<code>Deployment</code> 等。</li>
+</ul>
+<h3 id="2-pod">2. Pod
+</h3><ul>
+<li>K8s 最小部署单元，一个 Pod 可包含多个容器，适用于<strong>紧密耦合</strong>的服务（如主应用 + 日志收集侧车）。</li>
+<li>示例：查看指定命名空间下含关键词的 Pod
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl -n <span class="o">{</span>ns<span class="o">}</span> get pod <span class="p">|</span> grep <span class="s2">&#34;关键词&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="3-configmapcm">3. ConfigMap（CM）
+</h3><ul>
+<li>用于存储非敏感配置信息（如配置文件、环境变量），可注入 Pod 供容器使用。</li>
+<li>修改 ConfigMap 后，需删除对应 Pod 使配置生效（或使用热重启）。</li>
+</ul>
+<h3 id="4-chart-目录结构以-zpf0000-chart-为例">4. Chart 目录结构（以 zpf0000-chart 为例）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">zpf0000-chart/
+</span></span><span class="line"><span class="cl">├── Chart.yaml       # Chart 版本和应用版本定义
+</span></span><span class="line"><span class="cl">├── values.yaml      # 模板配置文件，供模板渲染使用
+</span></span><span class="line"><span class="cl">└── templates/       # K8s 资源模板目录
+</span></span><span class="line"><span class="cl">    ├── NOTES.txt    # 安装提示信息
+</span></span><span class="line"><span class="cl">    ├── _helpers.tpl # 模板辅助函数
+</span></span><span class="line"><span class="cl">    ├── zpf0000/     # 业务服务资源
+</span></span><span class="line"><span class="cl">    ├── front/       # 前端服务资源
+</span></span><span class="line"><span class="cl">    ├── haproxy/     # 负载均衡资源
+</span></span><span class="line"><span class="cl">    └── miracle/     # 其他服务资源
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议。转载请注明来自 ZPF的博客！</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/kubernetes-command-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/kubernetes-command-guide/k8s.0c7fd3f725a4e18e0789a6ffdc02e304_hu_dba03ddd8fc8badf.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Kubernetes 从入门到精通：核心命令与实战指南"
+                        data-key="kubernetes-command-guide" 
+                        data-hash="md5-DH/T9yWk4Y4Hiab/3ALjBA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Kubernetes 从入门到精通：核心命令与实战指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker-complete-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker-complete-guide/%E4%BB%99%E9%81%93%E6%9D%80%E6%8B%9B%E4%B8%87%E6%88%91.2db4eaa4ea93b030e204c04e2f8f8990_hu_42c372311df66639.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker 从入门到实践：容器化技术完全指南"
+                        data-key="docker-complete-guide" 
+                        data-hash="md5-LbTqpOqTsDDiBMBOL4&#43;JkA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker 从入门到实践：容器化技术完全指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/timewheel-algorithm/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">时间轮算法详解：高效定时任务调度</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/mysql-guideindex/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySQL 索引</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/grafana-guide/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Grafana 实战指南：数据可视化与监控面板</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2025 Example Person
+    </section>
+    
+    <section class="powerby">
+        
+            本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议。转载请注明来自 ZPF的博客！ <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script>
+  
+
+
+    
+    
+    const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+    
+    const cssPath = "/waifu/waifu.css"
+    const waifuTipesJsonPath = "/waifu/waifu-tips.json"
+
+    
+    
+    function loadExternalResource(url, type) {
+      return new Promise((resolve, reject) => {
+        let tag;
+
+        if (type === 'css') {
+          tag = document.createElement('link');
+          tag.rel = 'stylesheet';
+          tag.href = url;
+        }
+        else if (type === 'js') {
+          tag = document.createElement('script');
+          tag.type = 'module';
+          tag.src = url;
+        }
+        if (tag) {
+          tag.onload = () => resolve(url);
+          tag.onerror = () => reject(url);
+          document.head.appendChild(tag);
+        }
+      });
+    }
+
+    (async () => {
+      
+      
+      
+
+      
+      
+      const OriginalImage = window.Image;
+      window.Image = function (...args) {
+        const img = new OriginalImage(...args);
+        img.crossOrigin = "anonymous";
+        return img;
+      };
+      window.Image.prototype = OriginalImage.prototype;
+      
+      
+      await Promise.all([
+        loadExternalResource(cssPath, 'css'),
+        loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+      ]);
+      
+      
+      initWidget({
+        waifuPath: live2d_path + 'waifu-tips.json',
+        
+        cubism2Path: live2d_path + 'live2d.min.js',
+        cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+        tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+        logLevel: 'warn',
+        drag: false,
+      });
+    })();
+
+</script>
+    </body>
+</html>

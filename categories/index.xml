@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zpf-zero.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zpf-zero.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>K8s</title>
         <link>https://zpf-zero.github.io/categories/k8s/</link>
-        <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/categories/k8s/</guid>
         <description></description>
@@ -18,7 +18,7 @@
         <item>
         <title>技术成长</title>
         <link>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</link>
-        <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/</guid>
         <description></description>
@@ -26,7 +26,7 @@
         <item>
         <title>运维</title>
         <link>https://zpf-zero.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
-        <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zpf-zero.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
         <description></description>
